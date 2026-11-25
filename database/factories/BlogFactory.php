@@ -3,11 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Blog;
+use App\Models\About;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<Blog>
- */
 class BlogFactory extends Factory
 {
     protected $model = Blog::class;
@@ -15,6 +13,7 @@ class BlogFactory extends Factory
     public function definition(): array
     {
         return [
+            'about_id' => About::factory(),
             'tanggal' => fake()->date(),
             'judul' => fake()->sentence(),
             'ringkasan' => fake()->paragraph(),

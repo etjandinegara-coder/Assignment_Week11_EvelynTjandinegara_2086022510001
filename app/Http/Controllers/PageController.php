@@ -19,6 +19,8 @@ class PageController extends Controller
 
     public function blog()
     {
-        return view('blog', ['artikel' => Blog::all()]);
+        $artikel = Blog::with('about')->get();
+
+        return view('blog', compact('artikel'));
     }
 }

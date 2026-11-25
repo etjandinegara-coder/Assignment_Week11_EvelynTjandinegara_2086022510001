@@ -13,6 +13,7 @@ return new class extends Migration
     {
          Schema::create('blog', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('about_id')->constrained('about')->cascadeOnDelete();
             $table->date('tanggal');
             $table->string('judul');
             $table->text('ringkasan');

@@ -13,4 +13,9 @@ class About extends Model
     protected $table = 'about';
 
     protected $fillable = ['nama', 'judul', 'deskripsi', 'skills'];
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
 }

@@ -16,4 +16,9 @@ class Blog extends Model
         'judul',
         'ringkasan',
     ];
+
+    public function about()
+    {
+        return $this->belongsTo(About::class);
+    }
 }
